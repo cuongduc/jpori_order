@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}Quản lý Khách hàng{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "custom.css" %}">
+{% endblock %}
+
+{% block content %}
+    {% include 'partials/navbar.html' %}
+
+    <div class="main-content">
+        <div class="jumbotron jumbotron-fluid page-header">
+            <div class="page-title">
+                <h1 class="display-5">Quản lý khách hàng</h1>
+                <p class="lead">Xem danh sách khách hàng, chỉnh sửa, hoặc thêm khách hàng mới</p>
+            </div>
+            <div class="page-tools">
+                <div id="react-customer-playground"></div>
+            </div>
+        </div>
+
+        {% include "customer/customers_list.html" with customers=customers %}
+
+        {% include "customer/customer_excel_upload_modal.html" %}
+    </div>
+{% endblock %}

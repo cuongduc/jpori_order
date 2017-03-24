@@ -1,0 +1,37 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Mã khách hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Email</th>
+            <th>Điện thoại</th>
+            <th>Địa chỉ</th>
+            <th>Mã KM</th>
+            <th><i class="fa fa-phone-square" title="Đã thực hiện dịch vụ sau bán hàng"></i></th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{% if not customer.email %}{{""}}{% else %}{{ customer.email }}{% endif %}</td>
+                <td>{{ customer.phone }}</td>
+                <td>{% if not customer.address %}{{""}}{% else %}{{ customer.address }}{% endif %}</td>
+                <td>{% if not customer.promotion_code %}{{""}}{% else %}{{ customer.promotion_code }}{% endif %}</td>
+                <td>
+                    {% if not customer.got_customer_service %}
+                        <i class="fa fa-check-circle text-success"></i>
+                    {% else %}
+                        {{ "" }}
+                    {% endif %}
+                </td>
+                <td><i class="fa fa-pencil-square-o"></i> <i class="fa fa-trash-o"></i></td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Quản lý bán hàng{% endblock %}
+
+{% block content %}
+    {% include 'partials/navbar.html' %}
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">Quản lý khách hàng</h1>
+            <p class="lead">Xem danh sách khách hàng, chỉnh sửa, hoặc thêm khách hàng mới</p>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Thêm khách hàng mới
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Thêm mới thủ công</a>
+                    <a class="dropdown-item" href="#">Nhập từ file Excel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
