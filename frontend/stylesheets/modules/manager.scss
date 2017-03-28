@@ -1,0 +1,46 @@
+/**
+ * Common styles for module
+ */
+.page-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+
+  padding: 25px 40px;
+  margin-bottom: 0;
+  width: 100%;
+
+  .page-title {
+    order: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    //width: 70%;
+  }
+
+  .page-tools {
+    order: 1;
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: 20%;
+    vertical-align: middle;
+
+    padding-top: 25px;
+
+    button {
+      margin-bottom: 10px;
+      
+      &:hover {
+        cursor: pointer;
+      }
+
+      i.fa {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+@import "manager/customer";

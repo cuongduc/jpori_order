@@ -1,0 +1,14 @@
+@import "../config/colors.scss";
+/**
+ * Universal styles
+ */
+a {
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+    color: $gray-dark;
+  }
+}

@@ -1,0 +1,9 @@
+@import "config/variables";
+@import "config/colors";
+
+@import "modules/manager";
+@import "modules/common";
+
+.main-content {
+  margin-top: $navbar-height;
+}

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Third-party apps...
     'rest_framework',
     'webpack_loader',
+    'django_excel',
 ]
 
 MIDDLEWARE = [
@@ -132,7 +133,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+FILE_UPLOAD_HANDLERS = ["django_excel.ExcelMemoryFileUploadHandler",
+                        "django_excel.TemporaryExcelFileUploadHandler",
+                        "django.core.files.uploadhandler.MemoryFileUploadHandler",
+                        "django.core.files.uploadhandler.TemporaryFileUploadHandler"
+                        ]
 
+MEDIA_ROOT = str(os.path.join(os.path.dirname(BASE_DIR), 'media'))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 

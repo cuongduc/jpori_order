@@ -16,6 +16,7 @@ class CustomerList(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
+        print(request.data)
         serializer = CustomerSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

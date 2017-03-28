@@ -12,10 +12,12 @@ class Customer(TimeStampedModel):
     phone = models.CharField(max_length=20, null=False, blank=False)
     email = models.CharField(max_length=255, null=True, blank=True)
     address = models.CharField(max_length=500, null=True, blank=False)
-    birthday = models.DateTimeField(null=True)
+    birthday = models.DateField(null=True)
     promotion_code = models.CharField(max_length=100, null=True, blank=False)
     is_serviced = models.BooleanField(null=False, default=False)  # Khach hang da dc cham soc chua
     note = models.TextField(null=True)
+
+    objects = models.Manager()
 
     def __str__(self):
         return "{}:{}".format(self.id, self.name)
@@ -33,3 +35,6 @@ class Customer(TimeStampedModel):
         verbose_name = _("customer")
         verbose_name_plural = _("customers")
 
+
+class CustomerException(Exception):
+    pass
