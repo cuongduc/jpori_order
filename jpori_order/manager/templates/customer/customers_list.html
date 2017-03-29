@@ -23,7 +23,7 @@
                 <td>{% if not customer.address %}{{""}}{% else %}{{ customer.address }}{% endif %}</td>
                 <td>{% if not customer.promotion_code %}{{""}}{% else %}{{ customer.promotion_code }}{% endif %}</td>
                 <td>
-                    {% if not customer.got_customer_service %}
+                    {% if customer.got_customer_service %}
                         <i class="fa fa-check-circle text-success"></i>
                     {% else %}
                         {{ "" }}

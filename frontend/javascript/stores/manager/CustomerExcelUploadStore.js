@@ -23,17 +23,16 @@ class CustomerExcelUploadStore {
         console.log("onUploadSuccess");
         if (response.status == 200) {
             this.file = null;
-            this.isModalOpened = true;
+            this.isModalOpened = false;
             this.isLoading = false;
             this.errorMessage = [];
         }
     }
 
     onUploadFail(jqXhr) {
-        console.log("onUploadFail");
         this.isModalOpened = true;
         this.isLoading = false;
-        this.errorMessage.push(jqXhr.responseText);
+        this.errorMessage.push(jqXhr.response.data);
     }
 }
 

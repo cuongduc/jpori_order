@@ -18,7 +18,7 @@ class CustomerStore {
             address: null,
             birthday: null,
             promotion_code: null,
-            is_serviced: null,
+            is_serviced: false,
             note: null
         };
         this.isModalOpened = false;
@@ -37,7 +37,7 @@ class CustomerStore {
 
     onCreateCustomerFail(xhr) {
         this.isModalOpened = true;
-        this.errorMessage.push("Đã có lỗi xảy ra khi thêm người dùng, xin vui lòng kiểm tra lại dữ liệu và thử lại");
+        this.errorMessage.push(xhr.response.data);
     }
 
 }

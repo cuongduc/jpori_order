@@ -11,7 +11,7 @@ module.exports = {
     entry: './frontend/javascript/index.js',
     output: {
         path: path.resolve('./jpori_order/static/bundles/'),
-        filename: "[name]-[hash].js"
+        filename: "[name].js"
     },
     plugins: [
       new BundleTracker({filename: "./webpack-stats.json"})
@@ -20,7 +20,6 @@ module.exports = {
         loaders: [
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
             { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.css$/, loader: "style-loader!css-loader" }
         ]
     }
 };

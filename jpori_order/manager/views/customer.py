@@ -2,18 +2,17 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.http import Http404
-from django.views.decorators.csrf import csrf_exempt
 
 from rest_framework.views import APIView
 from rest_framework.parsers import FileUploadParser
 from rest_framework.response import Response
 from rest_framework import status
-import django_excel as excel
 
 from customer.models import Customer
 from customer.serializers import CustomerSerializer
-from manager.utils.excel import save_uploaded_file, import_customers, delete_temp_file
+from manager.utils.excel import save_uploaded_file
+from manager.utils.excel import import_customers
+from manager.utils.excel import delete_temp_file
 
 
 class CustomerListView(TemplateView):
@@ -33,6 +32,10 @@ class CustomerUploadView(APIView):
         customers = import_customers(path)
         delete_temp_file(path)
 
+        if (len(customers) == 0):   # No customer was added
+            return Response(
+                data={"message": "Đã có lỗi xảy ra khi nhập file Excel khách hàng, xin vui lòng kiểm tra lại"},
+                status=status.HTTP_400_BAD_REQUEST)
+
         serializer = CustomerSerializer(customers, many=True)
         return Response(serializer.data, status=204)
-

@@ -9,7 +9,7 @@ from openpyxl import load_workbook
 from customer.models import Customer
 
 # Define index for each field
-field_idx = {
+FIELD_IDX = {
     'id': 1,
     'name': 2,
     'email': 3,
@@ -37,12 +37,12 @@ def import_customers(excel_path=None):
     end_row   = sheet.max_row + 1
     result = []
     for i in range(start_row, end_row):
-        id       = sheet.cell(row=i, column=field_idx['id']).value
-        name     = sheet.cell(row=i, column=field_idx['name']).value
-        email    = sheet.cell(row=i, column=field_idx['email']).value
-        phone    = sheet.cell(row=i, column=field_idx['phone']).value
-        birthday = sheet.cell(row=i, column=field_idx['birthday']).value
-        address  = sheet.cell(row=i, column=field_idx['address']).value
+        id       = sheet.cell(row=i, column=FIELD_IDX['id']).value
+        name     = sheet.cell(row=i, column=FIELD_IDX['name']).value
+        email    = sheet.cell(row=i, column=FIELD_IDX['email']).value
+        phone    = sheet.cell(row=i, column=FIELD_IDX['phone']).value
+        birthday = sheet.cell(row=i, column=FIELD_IDX['birthday']).value
+        address  = sheet.cell(row=i, column=FIELD_IDX['address']).value
         if not check_customer_exist(id=id):
             customer = Customer(
                 id=id, name=name, email=email, phone=phone,
@@ -55,6 +55,11 @@ def import_customers(excel_path=None):
 
 
 def check_customer_exist(id):
+    """
+    Check whether a customer with given id is already existed
+    :param id: 
+    :return: 
+    """
     try:
         customer = Customer.objects.get(id=id)
         return customer is not None

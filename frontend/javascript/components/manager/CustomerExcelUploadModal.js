@@ -29,6 +29,7 @@ class CustomerExcelUploadModal extends Component {
     }
 
     toggle() {
+        this.setState({errorMessage: []});
         this.setState({isModalOpened: !this.state.isModalOpened});
     }
 
@@ -41,11 +42,19 @@ class CustomerExcelUploadModal extends Component {
     }
 
     onFileDropped(acceptedFiles, rejectedFiles) {
-        console.log(acceptedFiles);
         CustomerExcelUploadActions.setFile(acceptedFiles[0]);
     }
 
     render() {
+        const errors = this.state.errorMessage;
+        
+        let error_node = null;
+        if (errors && errors[0]) {
+            error_node = <div className="alert alert-danger" role="alert">
+                          <strong>Lỗi!</strong> {errors[0].message}
+                        </div>;
+        }
+
         return (
             <div>
                 <button type="button" className="btn btn-outline-primary btn-sm" onClick={this.toggle}>
@@ -58,6 +67,11 @@ class CustomerExcelUploadModal extends Component {
                 >
                     <ModalHeader toggle={this.toggle}>Upload File</ModalHeader>
                     <ModalBody>
+                        <div className="row">
+                            <div className="col">
+                                {error_node}
+                            </div>
+                        </div>
                         <div className="row">
                             <div className="col">
                                 <Dropzone onDrop={this.onFileDropped} multiple={false}>

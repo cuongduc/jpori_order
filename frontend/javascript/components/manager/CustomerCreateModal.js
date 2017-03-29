@@ -47,6 +47,48 @@ class CustomerCreateModal extends Component {
     }
 
     render() {
+        const errors = this.state.errorMessage[0];
+        
+        let id_node = null, name_node = null, phone_node = null, email_node = null;
+        if (errors && errors.id) {
+            id_node = <FormGroup className="form-group has-danger">
+                        <Label className="form-control-label">Mã khách hàng</Label>
+                        <Input type="text" required name="id" placeholder="VD: KH00001" onChange={this.setValue.bind(this, 'id')} />
+                        <div className="form-control-feedback">{errors.id[0]}</div>
+                     </FormGroup>;
+        } else {
+            id_node = <FormGroup className="form-group">
+                        <Label className="form-control-label">Mã khách hàng</Label>
+                        <Input type="text" required name="id" placeholder="VD: KH00001" onChange={this.setValue.bind(this, 'id')} />
+                    </FormGroup>;
+        }
+
+        if (errors && errors.name) {
+            name_node = <FormGroup className="form-group has-danger">
+                            <Label className="form-control-label">Họ tên</Label>
+                            <Input type="text" required name="name" placeholder="VD: Phạm Trường Vinh" onChange={this.setValue.bind(this, 'name')}/>
+                            <div className="form-control-feedback">{errors.name[0]}</div>
+                        </FormGroup>;
+        } else {
+            name_node = <FormGroup className="form-group">
+                            <Label className="form-control-label">Họ tên</Label>
+                            <Input type="text" required name="name" placeholder="VD: Phạm Trường Vinh" onChange={this.setValue.bind(this, 'name')}/>
+                        </FormGroup>;
+        }
+
+        if (errors && errors.phone) {
+            phone_node = <FormGroup className="form-group has-danger">
+                            <Label>Số điện thoại</Label>
+                            <Input type="text" required name="phone" placeholder="VD: 0989258226" onChange={this.setValue.bind(this, 'phone')}/>
+                            <div className="form-control-feedback">{errors.phone[0]}</div>
+                         </FormGroup>;
+        } else {
+            phone_node = <FormGroup className="form-group">
+                            <Label>Số điện thoại</Label>
+                            <Input type="text" required name="phone" placeholder="VD: 0989258226" onChange={this.setValue.bind(this, 'phone')}/>
+                        </FormGroup>;
+        }
+
         return (
             <div>
                 <button type="button" className="btn btn-outline-primary btn-sm" onClick={this.toggle}>
@@ -57,38 +99,18 @@ class CustomerCreateModal extends Component {
                     <ModalHeader toggle={this.toggle}>Thêm khách hàng mới</ModalHeader>
                     <ModalBody>
                         <Form name="createCustomerForm" id="createCustomerForm" ref="form">
-                            {this.state.errorMessage.length > 0 && (
-                                <div className="row">
-                                    <div className="col">
-                                        <div className="alert alert-danger" role="alert">
-                                            <ul>
-                                            {this.state.errorMessage.map(error => <li>{error}</li>)}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
                             <div className="row">
                                 <div className="col">
-                                    <FormGroup>
-                                        <Label>Mã khách hàng</Label>
-                                        <Input type="text" required name="id" placeholder="VD: KH00001" onChange={this.setValue.bind(this, 'id')} />
-                                    </FormGroup>
+                                    {id_node}
                                 </div>
                                 <div className="col">
-                                    <FormGroup>
-                                        <Label>Họ tên</Label>
-                                        <Input type="text" required name="name" placeholder="VD: Phạm Trường Vinh" onChange={this.setValue.bind(this, 'name')}/>
-                                    </FormGroup>
+                                    {name_node}
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col">
-                                    <FormGroup>
-                                        <Label>Số điện thoại</Label>
-                                        <Input type="text" required name="phone" placeholder="VD: 0989258226" onChange={this.setValue.bind(this, 'phone')}/>
-                                    </FormGroup>
+                                    {phone_node}
                                 </div>
                                 <div className="col">
                                     <FormGroup>
@@ -123,9 +145,9 @@ class CustomerCreateModal extends Component {
                                 <div className="col">
                                     <FormGroup>
                                         <Label>Đã được chăm sóc?</Label>
-                                        <Input type="select" name="is_serviced" onChange={this.setValue.bind(this, 'is_serviced')}>
-                                            <option value="false">Chưa gọi điện CS</option>
-                                            <option value="true">Đã gọi điện CS</option>
+                                        <Input type="select" name="is_serviced" onChange={this.setValue.bind(this, 'is_serviced')} value={false}>
+                                            <option value={false}>Chưa gọi điện CS</option>
+                                            <option value={true}>Đã gọi điện CS</option>
                                         </Input>
                                     </FormGroup>
                                 </div>
