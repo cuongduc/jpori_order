@@ -1,0 +1,20 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}Quản lý Sản phẩm{% endblock %}
+
+{% block content %}
+    {% include 'partials/navbar.html' %}
+
+    <div class="main-content">
+        <div class="jumbotron jumbotron-fluid page-header">
+            <div class="page-title">
+                <h1 class="display-5">Quản lý Sản phẩm</h1>
+                <p class="lead">Xem danh sách sản phẩm; chỉnh sửa, hoặc thêm sản phẩm mới</p>
+            </div>
+            <div class="page-tools">
+                <div id="react-product-playground"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
