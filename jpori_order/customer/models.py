@@ -9,7 +9,7 @@ from core.models import TimeStampedModel
 class Customer(TimeStampedModel):
     id = models.CharField(max_length=15, unique=True, primary_key=True)
     name = models.CharField(max_length=50, null=False, blank=False)
-    phone = models.CharField(max_length=20, null=False, blank=False)
+    phone = models.CharField(max_length=20, null=True, default="000-000")
     email = models.CharField(max_length=255, null=True, blank=True)
     address = models.CharField(max_length=500, null=True, blank=False)
     birthday = models.DateField(null=True)

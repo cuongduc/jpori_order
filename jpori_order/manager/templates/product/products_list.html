@@ -1,0 +1,29 @@
+<table class="table table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Mã hàng</th>
+            <th>Tên hàng</th>
+            <th>Giá bán</th>
+            <th>Giá vốn</th>
+            <th>Thuộc tính</th>
+            <th>Serial/Imei</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.selling_price }}</td>
+                <td>{{ product.buying_price }}</td>
+                <td>{{ product.descriptions }}</td>
+                <td>{{ product.get_imeis }}</td>
+                <td><i class="fa fa-pencil-square-o"></i> <i class="fa fa-trash-o"></i></td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+</table>

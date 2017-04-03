@@ -1,15 +1,7 @@
 from __future__ import unicode_literals
 
-import os
 
-from openpyxl import load_workbook
-
-from order.models import Order, OrderDetail
-from customer.models import Customer
-from product.models import Product
-
-
-FIELD_IDX = {
+ORDER_FIELD_DICT = {
     'id': 2,
     'time': 3,
     'customer_id': 4,
@@ -28,15 +20,3 @@ FIELD_IDX = {
     'product_discount': 35,
     'product_total': 36,
 }
-
-
-def import_orders(excel_path=None):
-    """
-
-    """
-    if not (os.path.exist(excel_path) and os.path.isfile(excel_path)):
-        raise IOError("File not found.")
-    else:
-        file = open(excel_path, "rb+")
-    return file
-

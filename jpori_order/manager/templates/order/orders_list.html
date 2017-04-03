@@ -1,0 +1,41 @@
+<table class="table table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Mã hoá đơn</th>
+            <th>Tổng</th>
+            <th>Mã khách hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Điện thoại</th>
+            <th>Người bán</th>
+            <th>Ngày bán</th>
+            <th>Mã hàng</th>
+            <th>Tên hàng</th>
+            <th>Số lượng</th>
+            <th>Giảm giá</th>
+            <th>Thành tiền</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ order.id }}</td>
+                <td>{{ order.total }}</td>
+                <td>{{ order.customer.id }}</td>
+                <td>{{ order.customer.name }}</td>
+                <td>{{ order.customer.phone }}</td>
+                <td>{{ order.salesperson }}</td>
+                <td>{{ order.time }}</td>
+                <td>{{ order.details.product.id }}</td>
+                <td>{{ order.details.product.name }}</td>
+                <td>{{ order.details.quantity }}</td>
+                <td>{{ order.details.discount }}</td>
+                <td>{{ order.details.product_total }}</td>
+                <td><i class="fa fa-pencil-square-o"></i> <i class="fa fa-trash-o"></i></td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
