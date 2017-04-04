@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "webpack:deploy": "webpack --config=webpack.config.js -p",
-    "heroku-postbuild": "webpack --config=webpack.config.js --progress --optimize-minimize"
+    "heroku-postbuild": "webpack --config=webpack.config.js --progress --optimize-minimize",
+    "postinstall": "gulp"
   },
   "dependencies": {
     "alt": "^0.18.6",
