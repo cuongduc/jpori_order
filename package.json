@@ -6,8 +6,8 @@
   "author": "Duc Cuong <duccuong.hust@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "webpack:deploy": "webpack --config=webpack/webpack.config.js -p",
-    "heroku-postbuild": "npm run dist"
+    "webpack:deploy": "webpack --config=webpack.config.js -p",
+    "heroku-postbuild": "webpack --config=webpack.config.js --progress --optimize-minimize"
   },
   "dependencies": {
     "alt": "^0.18.6",
