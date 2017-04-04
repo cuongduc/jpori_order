@@ -1,0 +1,107 @@
+@import '../config/colors';
+
+.jp-btn {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    border-radius: .25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:hover {
+        text-decoration: none;
+        background-repeat: repeat-x;
+        background-color: #e6ebf1;
+        background-image: -webkit-linear-gradient(270deg, #f0f3f6 0%, #e6ebf1 90%);
+        background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
+        background-position: 0 -0.5em;
+        border-color: rgba(27,31,35,0.35);
+    }
+
+    &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2em rgba(3,102,214,0.3);
+    }
+
+    &:active {
+        background-color: #e9ecef;
+        background-image: none;
+        border-color: rgba(27,31,35,0.35);
+        box-shadow: inset 0 0.15em 0.3em rgba(27,31,35,0.15);
+    }
+}
+
+.jp-btn-default {
+    color: #24292e;
+    background-color: #eff3f6;
+    background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+}
+
+.jp-btn-primary {
+    color: #fff;
+    background-color: #28a745;
+    background-image: -webkit-linear-gradient(270deg, #34d058 0%, #28a745 90%);
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+
+    &:hover {
+        background-color: #269f42;
+        background-image: -webkit-linear-gradient(270deg, #2fcb53 0%, #269f42 90%);
+        background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%);
+        background-position: 0 -0.5em;
+        border-color: rgba(27,31,35,0.5);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.2em rgba(52,208,88,0.3);
+    }
+
+    &:active {
+        background-color: #279f43;
+        background-image: none;
+        border-color: rgba(27,31,35,0.5);
+        box-shadow: inset 0 0.15em 0.3em rgba(27,31,35,0.15);
+    }
+}
+
+.jp-btn-orange {
+    color: #fff;
+    background-color: #d25a08;
+    background-image: -webkit-linear-gradient(270deg, #f7802f 0%, #d25a08 90%);
+    background-image: linear-gradient(-180deg, #f7802f 0%, #d25a08 90%);
+
+    &:hover {
+        background-color: #c85607;
+        background-image: -webkit-linear-gradient(270deg, #f77a25 0%, #c85607 90%);
+        background-image: linear-gradient(-180deg, #f77a25 0%, #c85607 90%);
+        background-position: 0 -0.5em;
+        border-color: rgba(27,31,35,0.5);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.2em rgba(247,128,47,0.3);
+    }
+
+    &:active {
+        background-color: #c65e17;
+        background-image: none;
+        border-color: rgba(27,31,35,0.5);
+        box-shadow: inset 0 0.15em 0.3em rgba(27,31,35,0.15);
+    }
+}
+

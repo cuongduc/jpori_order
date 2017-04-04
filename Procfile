@@ -1,0 +1,1 @@
+web: gunicorn jpori_order/jpori_order.wsgi --log-file -

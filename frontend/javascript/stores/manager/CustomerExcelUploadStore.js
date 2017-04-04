@@ -26,6 +26,7 @@ class CustomerExcelUploadStore {
             this.isModalOpened = false;
             this.isLoading = false;
             this.errorMessage = [];
+            window.location.reload(true);
         }
     }
 

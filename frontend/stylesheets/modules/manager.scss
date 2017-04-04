@@ -17,6 +17,10 @@
     order: 0;
     flex-grow: 1;
     flex-shrink: 0;
+
+    .lead {
+      opacity: .8;
+    }
   }
 
   .page-tools {
@@ -40,6 +44,11 @@
       }
     }
   }
+}
+
+.product-page-header {
+  background-image: -webkit-linear-gradient(200deg, #48227d 0%, #2f569c 100%);
+  background-image: linear-gradient(-110deg, #48227d 0%, #2f569c 100%);
 }
 
 @import "manager/customer";

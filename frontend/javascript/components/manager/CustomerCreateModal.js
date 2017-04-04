@@ -91,8 +91,7 @@ class CustomerCreateModal extends Component {
 
         return (
             <div>
-                <button type="button" className="btn btn-outline-primary btn-sm" onClick={this.toggle}>
-                    <i className="fa fa-plus"></i>
+                <button type="button" className="jp-btn jp-btn-default" onClick={this.toggle}>
                     Thêm khách hàng thủ công
                 </button>
                 <Modal isOpen={this.state.isModalOpened} toggle={this.state.toggle} size="lg">
@@ -145,7 +144,7 @@ class CustomerCreateModal extends Component {
                                 <div className="col">
                                     <FormGroup>
                                         <Label>Đã được chăm sóc?</Label>
-                                        <Input type="select" name="is_serviced" onChange={this.setValue.bind(this, 'is_serviced')} value={false}>
+                                        <Input type="select" name="is_serviced" onChange={this.setValue.bind(this, 'is_serviced')}>
                                             <option value={false}>Chưa gọi điện CS</option>
                                             <option value={true}>Đã gọi điện CS</option>
                                         </Input>
@@ -165,8 +164,8 @@ class CustomerCreateModal extends Component {
                         </Form>
                     </ModalBody>
                     <ModalFooter>
-                        <button className='btn btn-outline-secondary' onClick={this.toggle}>Huỷ</button>
-                        <button type="button" className='btn btn-outline-primary' onClick={this.onCreateButtonClicked}>Tạo mới</button>
+                        <button className='jp-btn jp-btn-default' onClick={this.toggle}>Huỷ</button>
+                        <button type="button" className='jp-btn jp-btn-primary' onClick={this.onCreateButtonClicked}>Tạo mới</button>
                     </ModalFooter>
                 </Modal>
             </div>

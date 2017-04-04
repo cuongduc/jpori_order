@@ -8,6 +8,13 @@ import CustomerExcelUploadActions from '../../actions/manager/CustomerExcelUploa
 import CustomerExcelUploadStore from '../../stores/manager/CustomerExcelUploadStore';
 
 
+const dzStyles = {
+    width: '100%',
+    padding: '10px 5px',
+    border: '2px dotted #292b2c'
+}
+
+
 class CustomerExcelUploadModal extends Component {
     constructor(props) {
         super(props);
@@ -57,8 +64,7 @@ class CustomerExcelUploadModal extends Component {
 
         return (
             <div>
-                <button type="button" className="btn btn-outline-primary btn-sm" onClick={this.toggle}>
-                    <i className="fa fa-file-excel-o"></i>
+                <button type="button" className="jp-btn jp-btn-orange" onClick={this.toggle}>
                     Thêm khách hàng từ Excel
                 </button>
 
@@ -74,15 +80,15 @@ class CustomerExcelUploadModal extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-                                <Dropzone onDrop={this.onFileDropped} multiple={false}>
+                                <Dropzone onDrop={this.onFileDropped} multiple={false} style={dzStyles}>
                                     <div>Nhấn vào đây để chọn file muốn tải lên</div>
                                 </Dropzone>
                             </div>
                         </div>
                     </ModalBody>
                     <ModalFooter>
-                        <button className='btn btn-outline-secondary' onClick={this.toggle}>Huỷ</button>
-                        <button className='btn btn-outline-primary' onClick={this.onUploadButtonClicked}>Tải lên</button>
+                        <button className='jp-btn jp-btn-default' onClick={this.toggle}>Huỷ</button>
+                        <button className='jp-btn jp-btn-primary' onClick={this.onUploadButtonClicked}>Tải lên</button>
                     </ModalFooter>
                 </Modal>
             </div>

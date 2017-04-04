@@ -11,5 +11,4 @@ node_modules/
 bower_components/
 staticfiles
 jpori_order/static/
-jpori_order/media/
 webpack-stats.json
