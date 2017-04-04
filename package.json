@@ -6,7 +6,8 @@
   "author": "Duc Cuong <duccuong.hust@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "heroku-postbuild": "npm run dist"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
