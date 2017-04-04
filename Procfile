@@ -1,1 +1,1 @@
-web: gunicorn jpori_order/jpori_order.wsgi --log-file -
+web: gunicorn --pythonpath jpori_order jpori_order.wsgi --log-file -
