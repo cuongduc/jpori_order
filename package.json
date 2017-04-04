@@ -6,14 +6,8 @@
   "author": "Duc Cuong <duccuong.hust@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server",
+    "webpack:deploy": "webpack --config=webpack/webpack.config.js -p",
     "heroku-postbuild": "npm run dist"
-  },
-  "devDependencies": {
-    "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.1",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-react": "^6.23.0"
   },
   "dependencies": {
     "alt": "^0.18.6",
@@ -35,6 +29,10 @@
     "sorty": "^1.2.2",
     "style-loader": "^0.16.0",
     "webpack": "^2.3.1",
-    "webpack-bundle-tracker": "^0.2.0"
+    "webpack-bundle-tracker": "^0.2.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0"
   }
 }
